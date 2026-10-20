@@ -1,0 +1,673 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#10111b">
+<title>Senthamil Selvan S. | ERP Functional Consultant</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --red:#ff2347;
+  --blue:#1a91ff;
+  --white:#fff;
+  --muted:#e1e6f1;
+  --glass:rgba(9,13,25,.78);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{
+  background:#10111b;
+  color:var(--white);
+  font-family:Inter,Arial,sans-serif;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+.container{width:min(1120px,90%);margin:auto}
+
+
+
+/* ONE CONTINUOUS SPIDER-MAN BACKGROUND */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-3;
+  background-image:url("https://images.unsplash.com/photo-1774709374921-1c5c1e9bf332?auto=format&fit=crop&w=2400&q=90");
+  background-position:center center;
+  background-size:cover;
+  background-repeat:no-repeat;
+  transform:scale(1.015);
+}
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  pointer-events:none;
+  background:
+    linear-gradient(90deg,rgba(5,8,17,.80),rgba(5,8,17,.48) 55%,rgba(5,8,17,.22)),
+    linear-gradient(0deg,rgba(5,8,17,.84),transparent 50%,rgba(5,8,17,.20));
+}
+
+/* NAVIGATION */
+header{
+  position:fixed;top:0;left:0;width:100%;z-index:1000;
+  background:rgba(6,9,18,.78);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid #ffffff24;
+}
+nav{height:75px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:19px;font-weight:900;letter-spacing:-1px}
+.logo span{color:var(--red);text-shadow:0 0 16px #ff2347}
+.navlinks{display:flex;align-items:center;gap:25px}
+.navlinks a{font-size:12px;font-weight:700;color:#f0f2f8;transition:.3s}
+.navlinks a:hover{color:var(--red);text-shadow:0 0 14px var(--red)}
+.navlinks .contact-link{border:1px solid var(--red);padding:10px 15px;border-radius:7px}
+.menu{display:none;background:#141a29;border:1px solid #ffffff30;color:white;padding:8px 12px;border-radius:7px}
+
+/* SECTIONS */
+section{padding:100px 0;position:relative}
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  padding-top:125px;
+  text-align:left;
+}
+.hero .container.hero-content{
+  width:min(1120px,90%);
+  max-width:790px;
+  margin-left:5%;
+  margin-right:auto;
+  text-align:left;
+  animation:heroEnter 1s ease both;
+}
+.hero .buttons,
+.hero .meta{
+  justify-content:flex-start;
+}
+.eyebrow{
+  display:flex;align-items:center;gap:11px;
+  color:#ff6a81;font-size:11px;font-weight:900;
+  letter-spacing:3px;text-transform:uppercase;margin-bottom:22px
+}
+.eyebrow::before{content:"";width:33px;height:2px;background:var(--red);box-shadow:0 0 14px var(--red)}
+h1{font-size:clamp(44px,8vw,88px);line-height:1.02;letter-spacing:-4px;font-weight:900;margin-bottom:23px}
+h1 span{color:var(--red);text-shadow:0 0 28px #ff234785}
+.hero h2{font-size:clamp(18px,3vw,26px);font-weight:500;margin-bottom:18px}
+.hero p{font-size:14px;color:#f0f2f8;line-height:1.9;max-width:680px}
+.buttons{display:flex;flex-wrap:wrap;gap:13px;margin-top:30px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:13px 19px;border-radius:7px;font-size:12px;font-weight:800;
+  border:1px solid #ffffff40;transition:.3s
+}
+.btn-primary{background:var(--red);border-color:var(--red)}
+.btn:hover{transform:translateY(-4px);box-shadow:0 0 24px #ff234760,0 10px 25px #0005}
+.btn-secondary:hover{border-color:var(--blue);box-shadow:0 0 22px #1a91ff50}
+.meta{display:flex;flex-wrap:wrap;gap:22px;margin-top:35px;font-size:11px;color:#fff}
+.meta span::before{content:"✦";color:var(--red);margin-right:8px}
+
+/* SECTION HEADINGS */
+.heading{margin-bottom:36px}
+.heading h2{font-size:clamp(30px,5vw,48px);line-height:1.15;letter-spacing:-2px}
+.heading h2 span{color:var(--red)}
+.heading p{font-size:13px;line-height:1.9;color:var(--muted);max-width:660px;margin-top:13px}
+
+/* SPIDER GLASS CARDS */
+.card{
+  position:relative;
+  background:var(--glass);
+  backdrop-filter:blur(16px);
+  border:1px solid #ffffff30;
+  border-radius:15px;
+  padding:27px;
+  overflow:hidden;
+  box-shadow:0 18px 50px #0004;
+  transition:transform .35s,border-color .35s,box-shadow .35s,background .35s;
+}
+.card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  opacity:0;
+  pointer-events:none;
+  background:radial-gradient(circle at var(--mx,50%) var(--my,50%),#1a91ff25,transparent 45%);
+  transition:opacity .3s;
+}
+.card:hover::before{opacity:1}
+.card:hover{
+  transform:translateY(-7px);
+  border-color:#ff2347bd;
+  box-shadow:0 0 0 1px #ff23472b,0 16px 40px #ff234725,0 0 25px #1a91ff12;
+  background:rgba(9,13,25,.91);
+}
+.card>*{position:relative}
+.grid-two{display:grid;grid-template-columns:1.2fr .8fr;gap:20px}
+.about-copy{font-size:13px;line-height:2;color:#e1e6f1}
+.about-copy p+p{margin-top:15px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.stat{background:#ffffff0d;border:1px solid #ffffff22;border-radius:10px;padding:19px;transition:.3s}
+.stat:hover{transform:scale(1.04);border-color:var(--blue);box-shadow:0 0 20px #1a91ff26}
+.stat strong{display:block;font-size:29px;color:var(--red)}
+.stat span{font-size:10px;color:var(--muted)}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.card h3{font-size:15px;margin-bottom:20px}
+.card h3 span{color:var(--red);margin-right:8px}
+.skill{margin:17px 0}
+.skill-label{font-size:11px;margin-bottom:8px;color:#f4f6fc}
+.track{height:5px;background:#ffffff1c;border-radius:20px;overflow:hidden}
+.fill{width:0;height:100%;background:linear-gradient(90deg,#ff2347,#ff6981,#1a91ff);border-radius:20px;transition:width 1.3s}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{
+  font-size:10px;font-weight:700;padding:8px 10px;
+  border:1px solid #ffffff2b;border-radius:6px;
+  background:#ffffff0c;transition:.25s
+}
+.tag:hover{transform:translateY(-4px);border-color:var(--blue);box-shadow:0 0 15px #1a91ff42}
+
+/* EXPERIENCE STORY */
+.story-intro{
+  border-left:3px solid var(--red);
+  padding:17px 20px;background:#ff234713;
+  border-radius:0 10px 10px 0;margin-bottom:25px;
+  color:#f4f6fc;font-size:13px;line-height:1.9
+}
+.story-intro strong{color:#ff7187}
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.story-card .chapter{font-size:10px;letter-spacing:2px;color:#ff7187;font-weight:900}
+.story-card h3{font-size:19px;margin:13px 0 7px}
+.company{font-size:12px;color:#80bcff;font-weight:700}
+.date{display:inline-block;margin-top:13px;font-size:10px;border:1px solid #ffffff2b;padding:6px 9px;border-radius:5px;color:#e4e8f2}
+.story-card p{font-size:12px;line-height:1.95;color:#e1e6f1;margin-top:18px}
+.story-card p strong{color:white}
+.story-card .quote{color:#ff9bab;font-weight:700}
+.story-list{padding-left:17px;margin-top:14px;font-size:12px;line-height:2;color:#e1e6f1}
+.story-list li::marker{color:var(--red)}
+.areas{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
+.area{font-size:9px;padding:6px 9px;border:1px solid #ff23475c;background:#ff234715;border-radius:5px;color:#ffdce2;transition:.25s}
+.area:hover{background:var(--red);color:white;transform:translateY(-3px)}
+
+/* EDUCATION */
+.education-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.year{font-size:10px;letter-spacing:2px;color:#ff7187;font-weight:900}
+.education-card h3{font-size:17px;line-height:1.5;margin:14px 0 8px}
+.education-card p{font-size:12px;line-height:1.8;color:var(--muted)}
+
+/* STRENGTHS */
+.strength-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.strength{font-size:12px;font-weight:700}
+.strength b{display:block;font-size:22px;color:var(--red);margin-bottom:11px}
+
+/* CONTACT */
+.contact-box{text-align:center;padding:45px 25px}
+.contact-box h2{font-size:clamp(30px,5vw,45px);letter-spacing:-2px}
+.contact-box h2 span{color:var(--red)}
+.contact-box>p{font-size:13px;color:var(--muted);margin:14px 0 24px}
+.contact-details{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-bottom:25px}
+.contact-details a{padding:11px 13px;border:1px solid #ffffff2b;border-radius:7px;font-size:11px;background:#ffffff0a;transition:.3s;overflow-wrap:anywhere}
+.contact-details a:hover{border-color:var(--blue);transform:translateY(-3px);box-shadow:0 0 18px #1a91ff30}
+footer{padding:25px 0;text-align:center;background:#050710e8;border-top:1px solid #ffffff20;font-size:10px;color:#c4cada}
+footer span{color:var(--red)}
+
+/* MOTION */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+#top{
+  position:fixed;right:22px;bottom:22px;z-index:1000;
+  width:43px;height:43px;border:1px solid #ffffff50;
+  background:var(--red);color:white;border-radius:8px;font-size:20px;
+  opacity:0;pointer-events:none;transform:translateY(10px);transition:.3s;cursor:pointer
+}
+#top.show{opacity:1;pointer-events:auto;transform:translateY(0)}
+.web-cursor{
+  position:fixed;z-index:2000;pointer-events:none;
+  width:18px;height:18px;border:1px solid #ff526b;
+  border-radius:50%;transform:translate(-50%,-50%);
+  box-shadow:0 0 15px #ff234765;
+}
+@keyframes heroEnter{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes glowPulse{0%,100%{text-shadow:0 0 16px #ff234745}50%{text-shadow:0 0 32px #ff2347bd}}
+.hero h1 span{animation:glowPulse 3s infinite}
+
+@media(max-width:850px){
+ .skills-grid{grid-template-columns:1fr 1fr}
+ .grid-two{grid-template-columns:1fr}
+ .strength-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:650px){
+ nav{height:68px}
+ .menu{display:block}
+ .navlinks{
+   display:none;position:absolute;top:68px;left:0;right:0;
+   padding:14px 5% 20px;background:#070a13fa;
+   border-bottom:1px solid #ffffff25;flex-direction:column;align-items:stretch;gap:0
+ }
+ .navlinks.open{display:flex}
+ .navlinks a{padding:12px 0}
+ .navlinks .contact-link{text-align:center;margin-top:8px}
+ section{padding:70px 0}
+ .hero{min-height:94vh;padding-top:125px}
+ h1{letter-spacing:-2.5px}
+ .skills-grid,.education-grid,.story-grid,.strength-grid{grid-template-columns:1fr}
+ .card{padding:22px}
+ .meta{flex-direction:column;gap:12px}
+ .web-cursor{display:none}
+ .contact-details{flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+ .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav class="container">
+<a class="logo" href="#home">SENTHAMIL<span>.</span></a>
+<button class="menu" id="menu" aria-label="Toggle menu" aria-expanded="false">☰</button>
+<div class="navlinks" id="navlinks">
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#experience">My Story</a>
+<a href="#education">Education</a>
+<a class="contact-link" href="#contact">Contact ↗</a>
+</div>
+</nav>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="home">
+<div class="container hero-content">
+<div class="eyebrow">Every hero has a story</div>
+<h1>SENTHAMIL<br><span>SELVAN S.</span></h1>
+<h2>ERP Functional Consultant</h2>
+<p>
+"With great responsibility comes great execution."
+I believe every business challenge has a solution. I listen to the people
+behind the process, understand the problem, and help transform their
+requirements into practical ERP workflows.
+</p>
+<div class="buttons">
+<a href="#experience" class="btn btn-primary">Discover My Story ↗</a>
+<a href="#contact" class="btn btn-secondary">Let's Connect</a>
+</div>
+<div class="meta">
+<span>ERP Functional Consulting</span>
+<span>Business Process Analysis</span>
+<span>Workflow Design & Testing</span>
+</div>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<div class="container reveal">
+<div class="heading">
+<div class="eyebrow">01 / Behind the Mask</div>
+<h2>The Person Behind <span>The Process.</span></h2>
+<p>Understanding problems first. Building better workflows next.</p>
+</div>
+<div class="grid-two">
+<div class="card about-copy">
+<p>
+"Every hero needs to understand the city before saving it." For me,
+that city is the business environment. I work to understand how teams
+operate, where processes get stuck, and what an ERP system needs to do
+to support their work.
+</p>
+<p>
+My role combines requirement gathering, process analysis, functional
+prototyping, developer coordination, testing, and change management.
+I help business teams and technical teams understand each other.
+</p>
+<p>
+I also use Google AI Studio to explore UI concepts and functional
+prototypes, helping turn an idea into something the team can review
+and develop.
+</p>
+</div>
+<div class="stats">
+<div class="stat"><strong>07</strong><span>Operational areas supported</span></div>
+<div class="stat"><strong>ERP</strong><span>Functional consulting</span></div>
+<div class="stat"><strong>UAT</strong><span>Testing and validation</span></div>
+<div class="stat"><strong>AI</strong><span>Assisted prototyping</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+<div class="container reveal">
+<div class="heading">
+<div class="eyebrow">02 / My Superpowers</div>
+<h2>Skills That Help Me <span>Get The Job Done.</span></h2>
+<p>Not superpowers from a radioactive spider — practical skills built through work.</p>
+</div>
+<div class="skills-grid">
+<div class="card">
+<h3><span>✦</span> Functional Consulting</h3>
+<div class="skill"><div class="skill-label"><span>ERP Functional Consulting</span></div><div class="track"><div class="fill" data-width="90%"></div></div></div>
+<div class="skill"><div class="skill-label"><span>Requirement Gathering</span></div><div class="track"><div class="fill" data-width="88%"></div></div></div>
+<div class="skill"><div class="skill-label"><span>Workflow Design</span></div><div class="track"><div class="fill" data-width="85%"></div></div></div>
+<div class="skill"><div class="skill-label"><span>Process Analysis</span></div><div class="track"><div class="fill" data-width="85%"></div></div></div>
+</div>
+
+<div class="card">
+<h3><span>✦</span> Quality & Delivery</h3>
+<div class="skill"><div class="skill-label"><span>Functional Testing</span></div><div class="track"><div class="fill" data-width="85%"></div></div></div>
+<div class="skill"><div class="skill-label"><span>UAT Coordination</span></div><div class="track"><div class="fill" data-width="82%"></div></div></div>
+<div class="skill"><div class="skill-label"><span>Bug Identification</span></div><div class="track"><div class="fill" data-width="83%"></div></div></div>
+<div class="skill"><div class="skill-label"><span>Change Management</span></div><div class="track"><div class="fill" data-width="80%"></div></div></div>
+</div>
+
+<div class="card">
+<h3><span>✦</span> Tools & Teamwork</h3>
+<div class="tags">
+<span class="tag">Google AI Studio</span>
+<span class="tag">Functional Prototyping</span>
+<span class="tag">Developer Coordination</span>
+<span class="tag">Business Analysis</span>
+<span class="tag">Process Improvement</span>
+<span class="tag">Workflow Mapping</span>
+<span class="tag">Business–Tech Coordination</span>
+</div>
+</div>
+</div>
+<p style="font-size:10px;color:#e0e5f0;margin-top:14px">Note: Skill-bar percentages are illustrative visual indicators, not measured assessments.</p>
+</div>
+</section>
+
+<!-- EXPERIENCE STORY -->
+<section id="experience">
+<div class="container reveal">
+<div class="heading">
+<div class="eyebrow">03 / My Origin Story</div>
+<h2>Every Challenge Has <span>A Story.</span></h2>
+<p>My career, told from the perspective of someone who believes problems are there to be solved.</p>
+</div>
+
+<div class="story-intro">
+<strong>"Being the friendly neighbourhood problem-solver isn't just about spotting trouble."</strong>
+<br>
+It's about understanding why the problem exists, bringing the right people together,
+and helping create a solution that works in the real world.
+</div>
+
+<div class="story-grid">
+
+<article class="card story-card">
+<div class="chapter">CHAPTER 01 · CURRENT ROLE</div>
+<h3>The ERP Mission</h3>
+<div class="company">Meena Fibre Industry Private Limited</div>
+<div class="date">March 2026 – Present</div>
+
+<p class="quote">"When a business process gets tangled like a web, my job is to help untangle it."</p>
+
+<p>
+At Meena Fibre Industry, I work as an <strong>ERP Functional Consultant</strong>.
+My mission starts with listening. I gather requirements from the people who
+actually use the processes, understand their daily challenges, and map how
+their operations should work inside the ERP system.
+</p>
+
+<p>
+I'm involved across <strong>seven operational areas</strong>. Each area has
+its own process, needs, and challenges. I help translate those business
+needs into functional workflows that the development team can understand.
+</p>
+
+<div class="areas">
+<span class="area">Production</span>
+<span class="area">Inserts</span>
+<span class="area">Painting</span>
+<span class="area">Assembly</span>
+<span class="area">Dispatch</span>
+<span class="area">Store</span>
+<span class="area">Tender</span>
+</div>
+
+<p>
+Here's where teamwork matters: I act as a bridge between business stakeholders
+and developers. I also create UI concepts and functional prototypes using
+<strong>Google AI Studio</strong>, helping teams explore how a solution could work
+before moving forward with development.
+</p>
+
+<p>
+Once a feature is ready, the mission isn't over. I support functional testing
+and UAT, identify bugs and workflow gaps, coordinate feedback, validate
+functionality, and manage change requests. The goal is to help the ERP behave
+the way the business needs it to.
+</p>
+
+<ul class="story-list">
+<li>Gather and clarify business requirements.</li>
+<li>Map operational processes into ERP workflows.</li>
+<li>Coordinate with developers and stakeholders.</li>
+<li>Create functional prototypes and UI concepts.</li>
+<li>Support testing, UAT, bug reporting, and validation.</li>
+<li>Support change management and process improvement.</li>
+</ul>
+
+<p class="quote">"A good solution isn't just one that works on screen. It's one that works for the people using it."</p>
+</article>
+
+<article class="card story-card">
+<div class="chapter">CHAPTER 02 · EARLIER EXPERIENCE</div>
+<h3>Learning to Keep Things Moving</h3>
+<div class="company">Genius HR Tech</div>
+<div class="date">May 2024 – September 2024</div>
+
+<p style="color:#b6d8ff;font-size:11px">Client / Work Location: Vedantu Innovation Private Limited</p>
+
+<p class="quote">"Before solving complicated system problems, you learn how to keep everyday operations running."</p>
+
+<p>
+In my contract role as an <strong>Admin Executive</strong>, I supported
+administrative and operational activities. I maintained records, helped
+coordinate day-to-day tasks, and worked with internal teams and stakeholders.
+</p>
+
+<p>
+This experience gave me practical exposure to the importance of organised
+information, clear communication, and coordination. Even when a task looks
+small, it can affect the work of an entire team.
+</p>
+
+<p>
+Those lessons are relevant to my current role too. Understanding how people
+communicate, how information moves, and how work gets completed helps me
+approach ERP processes with a business-focused mindset.
+</p>
+
+<ul class="story-list">
+<li>Support administrative and operational coordination.</li>
+<li>Maintain records and assist with daily tasks.</li>
+<li>Coordinate with internal teams and stakeholders.</li>
+<li>Support communication and routine processes.</li>
+</ul>
+
+<p class="quote">"Every experience adds another tool to your utility belt."</p>
+</article>
+
+</div>
+</div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+<div class="container reveal">
+<div class="heading">
+<div class="eyebrow">04 / Training Arc</div>
+<h2>My Academic <span>Journey.</span></h2>
+<p>Engineering gave me a technical foundation that I now apply to business systems and workflows.</p>
+</div>
+<div class="education-grid">
+<div class="card education-card">
+<div class="year">2021 – 2024</div>
+<h3>B.Tech – Electrical and Electronics Engineering</h3>
+<p>Dr. M.G.R. Educational and Research Institute</p>
+<p style="margin-top:14px">A foundation in engineering and structured problem-solving.</p>
+</div>
+<div class="card education-card">
+<div class="year">2018 – 2021</div>
+<h3>Diploma – Electrical and Electronics Engineering</h3>
+<p>T.J.S. Polytechnic College</p>
+<p style="margin-top:14px">Technical education that shaped my approach to systems and practical challenges.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- STRENGTHS -->
+<section id="strengths">
+<div class="container reveal">
+<div class="heading">
+<div class="eyebrow">05 / The Code I Work By</div>
+<h2>Responsibility. <span>Teamwork. Results.</span></h2>
+<p>Every mission needs more than one skill. These are the strengths I bring to my work.</p>
+</div>
+<div class="strength-grid">
+<div class="card strength"><b>01</b>Understand business requirements</div>
+<div class="card strength"><b>02</b>Analyse processes and identify gaps</div>
+<div class="card strength"><b>03</b>Connect business and technical teams</div>
+<div class="card strength"><b>04</b>Approach problems methodically</div>
+<div class="card strength"><b>05</b>Validate quality through testing</div>
+<div class="card strength"><b>06</b>Look for continuous improvement</div>
+</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<div class="container reveal">
+<div class="card contact-box">
+<div class="eyebrow" style="justify-content:center">06 / Your Friendly Neighbourhood Consultant</div>
+<h2>Got a Challenge? <span>Let's Talk.</span></h2>
+<p>Professional opportunities, ERP discussions, and collaboration — I'm ready to connect.</p>
+
+<div class="contact-details">
+<a href="mailto:senthamil0713@gmail.com">✉ senthamil0713@gmail.com</a>
+<a href="tel:+919344038554">☎ +91 93440 38554</a>
+<a href="https://www.linkedin.com/in/senthamil-selvan-s-31531230b/" target="_blank" rel="noopener noreferrer">↗ LinkedIn Profile</a>
+</div>
+
+<a class="btn btn-primary" href="mailto:senthamil0713@gmail.com?subject=Professional%20Opportunity">Send Me an Email ↗</a>
+<p style="margin-top:20px;margin-bottom:0;font-size:10px">Thatchur – 601204, Tamil Nadu, India</p>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer>
+<div class="container">
+© <span id="year"></span> Senthamil Selvan S. · ERP Functional Consultant
+<br>
+<span>"With great responsibility comes great execution." 🕷</span>
+</div>
+</footer>
+
+<button id="top" aria-label="Back to top">↑</button>
+<div class="web-cursor" id="cursor"></div>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+// Mobile navigation
+const menu = document.getElementById("menu");
+const navlinks = document.getElementById("navlinks");
+
+menu.addEventListener("click", () => {
+  const open = navlinks.classList.toggle("open");
+  menu.textContent = open ? "✕" : "☰";
+  menu.setAttribute("aria-expanded", String(open));
+});
+
+navlinks.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    navlinks.classList.remove("open");
+    menu.textContent = "☰";
+    menu.setAttribute("aria-expanded", "false");
+  });
+});
+
+// Scroll reveal
+if ("IntersectionObserver" in window) {
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        obs.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.12});
+
+  document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
+  // Skill-bar animation
+  const skillObserver = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.width = entry.target.dataset.width;
+        obs.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.25});
+
+  document.querySelectorAll(".fill").forEach(el => skillObserver.observe(el));
+} else {
+  document.querySelectorAll(".reveal").forEach(el => el.classList.add("visible"));
+  document.querySelectorAll(".fill").forEach(el => el.style.width = el.dataset.width);
+}
+
+// Back-to-top
+const topButton = document.getElementById("top");
+window.addEventListener("scroll", () => {
+  topButton.classList.toggle("show", window.scrollY > 450);
+}, {passive:true});
+
+topButton.addEventListener("click", () => {
+  window.scrollTo({top:0,behavior:"smooth"});
+});
+
+// Web-like glowing cursor on desktop
+const cursor = document.getElementById("cursor");
+if (window.matchMedia("(hover:hover) and (pointer:fine)").matches) {
+  document.addEventListener("mousemove", event => {
+    cursor.style.left = event.clientX + "px";
+    cursor.style.top = event.clientY + "px";
+  });
+} else {
+  cursor.style.display = "none";
+}
+
+// Interactive card lighting
+if (window.matchMedia("(hover:hover) and (pointer:fine)").matches) {
+  document.querySelectorAll(".card").forEach(card => {
+    card.addEventListener("mousemove", event => {
+      const rect = card.getBoundingClientRect();
+      card.style.setProperty("--mx", `${event.clientX - rect.left}px`);
+      card.style.setProperty("--my", `${event.clientY - rect.top}px`);
+    });
+  });
+}
+</script>
+
+</body>
+</html>
